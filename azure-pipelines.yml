@@ -38,11 +38,12 @@ parameters:
 jobs:
 - job: "PowerAppsTestFrameworkAutomation"
   pool:
-    vmImage: ${{ parameters.image }}
-    demands:
-    - msbuild
-    - visualstudio
-    - vstest
+    name: doe  # Use the name of your new self-hosted agent pool here
+  vmImage: ${{ parameters.image }}
+  demands:
+  - msbuild
+  - visualstudio
+  - vstest
   variables:
   - name: PortalUrl
     value: https://make.powerapps.com
